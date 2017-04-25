@@ -1,0 +1,39 @@
+#faqs {
+	
+	margin: 3rem 0;
+
+	.question {
+		margin-top: 2rem;
+		font-size: 1.5em;
+		font-weight: 700;
+
+		.ui-icon {
+			margin-right: 0.5rem;
+		}
+	}
+
+	.question:nth-of-type(1) {
+		margin-top: 0;
+	}
+
+	.question:focus {
+		outline-color: #454545; 
+	}
+
+	.answer {
+
+	}
+
+	/* Overrite some of the default 'active' colors of jQuery UI */
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+       	border: 1px solid #c5c5c5;
+	    background: #f6f6f6;
+	    font-weight: normal;
+		color: #454545;
+	}
+
+	.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+	    background-image: url(images/ui-icons_454545_256x240.png);
+	}
+
+}
