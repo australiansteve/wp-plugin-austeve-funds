@@ -144,7 +144,7 @@ class AUSteve_FAQs {
 		        $tax_query[] = array(
 	                'taxonomy' => 'austeve-faqs-category',
 	                'field'    => 'slug',
-	                'terms'    => explode(',', $include_type),
+	                'terms'    => explode(',', $include_category),
 		        );
 		    }
 
@@ -154,7 +154,7 @@ class AUSteve_FAQs {
 	                'taxonomy' => 'austeve-faqs-category',
 	                'field'    => 'slug',
 	                'operator' => 'NOT IN',
-	                'terms'    => explode(',', $include_type),
+	                'terms'    => explode(',', $exclude_category),
 		        );
 		    }
 
@@ -167,10 +167,19 @@ class AUSteve_FAQs {
 		    echo "<div id='faqs'>";
 		    while ( have_posts() ) :
 		        the_post();
+
+		        $terms = get_the_terms( get_the_ID(), 'austeve-faqs-category' );
+	        	$categories = "";
+		        if ($terms):
+		        	foreach($terms as $term)
+		        	{
+						$categories .= $term->slug." ";
+		        	}
+		        endif;
 ?>
 
-				<h3 class='question'><?php the_title(); ?></h3>
-				<div class='answer'><?php echo get_field('answer'); ?></div>
+				<h3 class='question <?php echo $categories; ?>'><?php the_title(); ?></h3>
+				<div class='answer <?php echo $categories; ?>'><?php echo get_field('answer'); ?></div>
         		
 <?php
 		    endwhile;
