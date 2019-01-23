@@ -1,6 +1,5 @@
 // Load our plugins
 var	gulp			=	require('gulp'),
-	gulpif			=	require('gulp-if'),  // Gulp if
 	argv = 				require('yargs').argv, //Arguments parser
 	sass			=	require('gulp-sass'),  // Our sass compiler
 	notify			=	require('gulp-notify'), // Basic gulp notificatin using OS
@@ -10,9 +9,7 @@ var	gulp			=	require('gulp'),
 	rename			=	require('gulp-rename'), // Allows us to rename our css file prior to minifying
 	autoprefixer	=	require('gulp-autoprefixer'), // Adds vendor prefixes for us
 	concat			= require('gulp-concat'), // Concat our js
-	uglify			= require('gulp-uglify'), // Minify our js
-	jshint 			= require('gulp-jshint'); // Checks for js errors
-
+	uglify			= require('gulp-uglify'); // Minify our js
 
 var paths = {
 	sassPath: 'sass/',
@@ -27,11 +24,10 @@ gulp.task('deploy', function() {
 		'*.css',
 		'js/*.js'];
 
-	var destThemeDev = 'C:/wamp/www/theme-dev/wp-content/plugins/austeve-faqs';
-	var destCanvas = 'C:/wamp/www/canvas/wp-content/plugins/austeve-faqs';
+	var destThemeDev = '/Applications/MAMP/local.cfsj/wp-content/plugins/austeve-faqs';
 
 	return gulp.src(files, {base:"."})
-    		.pipe(gulpif(argv.canvas, gulp.dest(destCanvas), gulp.dest(destThemeDev)));
+    		.pipe(gulp.dest(destThemeDev));
 });
 
 gulp.task('styles', function() {
