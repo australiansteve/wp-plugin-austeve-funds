@@ -12,24 +12,24 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0"
   },
-  "name": "austeve-faqs",
-  "description": "AUSteve FAQs",
+  "name": "austeve-funds",
+  "description": "AUSteve Funds",
   "version": "0.0.1",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/australiansteve/wp-plugin-austeve-faqs"
+    "url": "https://github.com/australiansteve/wp-plugin-austeve-funds"
   },
   "author": "AustralianSteve",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/australiansteve/wp-plugin-austeve-faqs/issues"
+    "url": "https://github.com/australiansteve/wp-plugin-austeve-funds/issues"
   },
-  "homepage": "https://github.com/australiansteve/wp-plugin-austeve-faqs"
+  "homepage": "https://github.com/australiansteve/wp-plugin-austeve-fuds"
 }

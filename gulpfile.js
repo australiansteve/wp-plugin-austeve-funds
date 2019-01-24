@@ -1,6 +1,5 @@
 // Load our plugins
 var	gulp			=	require('gulp'),
-	argv = 				require('yargs').argv, //Arguments parser
 	sass			=	require('gulp-sass'),  // Our sass compiler
 	notify			=	require('gulp-notify'), // Basic gulp notificatin using OS
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
@@ -24,7 +23,7 @@ gulp.task('deploy', function() {
 		'*.css',
 		'js/*.js'];
 
-	var destThemeDev = '/Applications/MAMP/local.cfsj/wp-content/plugins/austeve-faqs';
+	var destThemeDev = '/Applications/MAMP/local.cfsj/wp-content/plugins/austeve-funds';
 
 	return gulp.src(files, {base:"."})
     		.pipe(gulp.dest(destThemeDev));
